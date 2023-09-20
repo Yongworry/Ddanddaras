@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 const BrickPage = () => {
     const canvasRef = useRef(null);
     const [canvasTag, setCanvasTag] = useState([]);
-    const context = canvasRef.current.getContext('2d');
 
     useEffect (() => {
         const canvas = canvasRef.current;
+        const context = canvasRef.current.getContext('2d');
         canvas.width = window.innerWidth * 0.5;
         canvas.height = window.innerHeight;
         setCanvasTag(canvas);
