@@ -1,15 +1,19 @@
-import logo from './emergency.JPG';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import FeedPage from "./pages/feed.js"
+import MainPage from "./pages/main.js"
+import BrickPage from "./pages/brick.js"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          여기는 딴따라들 메인 페이지입니다.
-        </p>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />}></Route>
+          <Route path="/feed" element={<FeedPage />}></Route>
+          <Route path="/brick_breaker" element={<BrickPage />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
